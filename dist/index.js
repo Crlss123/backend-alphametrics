@@ -13,8 +13,10 @@ app.get("/student/getallstudents", (req, res) => {
     res.send("Get all students");
 });
 app.post("/student/createstudent", (req, res) => {
-    const studentId = req.body.id;
-    res.send(`Creates a new student with id ${studentId}`);
+    res.send(`Creates a new student with id ${req.body.id}`);
+});
+app.patch("/student/patchstudent/:id", (req, res) => {
+    res.send(`Update this parts of the product with id ${req.params.id}: ${req.body.status}, ${req.body.nombre} `);
 });
 app.listen(PORT, () => {
     console.log("Servidor corriendo en puerto 3000");
