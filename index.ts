@@ -20,6 +20,10 @@ app.patch("/student/patchstudent/:id", (req: Request, res: Response) => {
   );
 });
 
+app.delete("/student/deletestudent/:id", (req: Request, res: Response) => {
+  res.send(`Delete student with id ${req.params.id}`);
+});
+
 app.get("/student/getstudent/:id", (req: Request, res: Response) => {
   res.send(`Get student with id ${req.params.id}`);
 });

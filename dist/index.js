@@ -19,6 +19,9 @@ app.post("/student/createstudent", (req, res) => {
 app.patch("/student/patchstudent/:id", (req, res) => {
     res.send(`Update this parts of the product with id ${req.params.id}: ${req.body.status}, ${req.body.nombre} `);
 });
+app.delete("/student/deletestudent/:id", (req, res) => {
+    res.send(`Delete student with id ${req.params.id}`);
+});
 app.get("/student/getstudent/:id", (req, res) => {
     res.send(`Get student with id ${req.params.id}`);
 });
