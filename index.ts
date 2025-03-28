@@ -10,13 +10,18 @@ app.get("/student/getallstudents", (req: Request, res: Response) => {
 });
 
 app.post("/student/createstudent", (req: Request, res: Response) => {
-  res.send(`Creates a new student with id ${req.body.id}`);
+  const id = req.body.id;
+  res.send(`Creates a new student with id ${id}`);
 });
 
 app.patch("/student/patchstudent/:id", (req: Request, res: Response) => {
   res.send(
     `Update this parts of the product with id ${req.params.id}: ${req.body.status}, ${req.body.nombre} `
   );
+});
+
+app.get("/student/getstudent/:id", (req: Request, res: Response) => {
+  res.send(`Get student with id ${req.params.id}`);
 });
 
 app.listen(PORT, () => {
